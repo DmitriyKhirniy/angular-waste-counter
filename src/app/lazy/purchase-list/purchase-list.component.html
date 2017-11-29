@@ -1,0 +1,40 @@
+<h3>Purchase list</h3>
+<table>
+  <thead>
+   <tr>
+     <td>#</td>
+     <td>Title</td>
+     <td>Description</td>
+     <td (click)="sort('amount')">Amount</td>
+   </tr>
+  </thead>
+  <tbody>
+   <tr *ngFor="let purchase of purchases$ | async; let i = index">
+     <td>{{i + 1}}</td>
+     <td>{{purchase.title}}</td>
+     <td>{{purchase.description}}</td>
+     <td>{{purchase.amount.value | currency: purchase.amount.currency}}</td>
+   </tr>
+  </tbody>
+</table>
+<button (click)="calculate()">calcukate</button>
+<p>Total: {{total | currency: 'UAH'}}</p>
+
+<table>
+  <thead>
+  <tr>
+    <td>#</td>
+    <td>Title</td>
+    <td>Description</td>
+    <td (click)="sort('amount')">Amount</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let purchase of purchases1$ | async; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{purchase.title}}</td>
+    <td>{{purchase.description}}</td>
+    <td>{{+purchase.amount | currency: purchase.currency.name}}</td>
+  </tr>
+  </tbody>
+</table>

@@ -2,7 +2,6 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component } 
 import { Subject } from 'rxjs/Subject';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-// const octicons = require('octicons')
 
 @Component({
   selector: 'app-root',
@@ -85,7 +84,6 @@ export class AppComponent implements AfterViewInit {
           for (let i =0;i<10;i++) {
             this.usersStore.push(...res)
           }
-          console.log('store: ', this.usersStore)
         }
       )
   }
